@@ -1,6 +1,6 @@
-def cifrado_cesar(texto, desplazamiento):
+def cifrado_cesar(texto, desplazamiento):  #Función para cifrar o descifrar usando el cifrado César
     resultado = ""
-
+#declaramos  la funcion en donde resivvvimos texto y el desplazamiento y sera almacenada en una variable resultado
     for char in texto:
         # Solo cifrar letras
         if char.isalpha():
@@ -17,7 +17,7 @@ def cifrado_cesar(texto, desplazamiento):
 
 # Ejemplo de uso
 if __name__ == "__main__":
-    mensaje = "HOLA MUNDO"
+    mensaje = "HOLA Migueldh"
     clave = 3
 
     cifrado = cifrado_cesar(mensaje, clave)
