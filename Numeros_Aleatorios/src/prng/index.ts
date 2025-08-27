@@ -1,4 +1,5 @@
-import * as crypto from "crypto";//importa el modulo crypto de nodejs
+import crypto from "crypto"; //importa el modulo crypto de node.js para generar numeros aleatorios
+
 
 // Define un tipo que puede ser "bytes", "int" o "uuid"
 
