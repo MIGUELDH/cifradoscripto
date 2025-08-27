@@ -1,15 +1,16 @@
-def cifrado_cesar(texto, desplazamiento):  #Función para cifrar o descifrar usando el cifrado César
+def cifrado_cesar(texto, desplazamiento):
     resultado = ""
-#declaramos  la funcion en donde resivvvimos texto y el desplazamiento y sera almacenada en una variable resultado
+
     for char in texto:
-        # Solo cifrar letras
-        if char.isalpha():
-            # Determinar si es mayúscula o minúscula
+        if char.isalpha():  # letras
             base = ord('A') if char.isupper() else ord('a')
-            # Aplicar desplazamiento y volver a convertir a caracter
             resultado += chr((ord(char) - base + desplazamiento) % 26 + base)
-        else:
-            # Dejar espacios, números o símbolos sin cambio
+
+        elif char.isdigit():  # números
+            base = ord('0')
+            resultado += chr((ord(char) - base + desplazamiento) % 10 + base)
+
+        else:  # espacios, símbolos, etc.
             resultado += char
 
     return resultado
@@ -17,8 +18,8 @@ def cifrado_cesar(texto, desplazamiento):  #Función para cifrar o descifrar usa
 
 # Ejemplo de uso
 if __name__ == "__main__":
-    mensaje = "HOLA Migueldh"
-    clave = 3
+    mensaje = input("Introduce el mensaje a cifrar: ")
+    clave = 3 # Desplazamiento fijo de 3 para el cifrado César
 
     cifrado = cifrado_cesar(mensaje, clave)
     descifrado = cifrado_cesar(cifrado, -clave)
