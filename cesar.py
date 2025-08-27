@@ -1,16 +1,16 @@
-def cifrado_cesar(texto, desplazamiento):
-    resultado = ""
+def cifrado_cesar(texto, desplazamiento):#creamos una función que recibe el texto y el desplazamiento
+    resultado = ""#inicializamos una variable vacía para almacenar el resultado
 
-    for char in texto:
-        if char.isalpha():  # letras
-            base = ord('A') if char.isupper() else ord('a')
-            resultado += chr((ord(char) - base + desplazamiento) % 26 + base)
+    for char in texto:#iteramos sobre cada caracter del texto
+        if char.isalpha():  #unicamente letras
+            base = ord('A') if char.isupper() else ord('a')#diferenciamos entre mayusculas y minusculas
+            resultado += chr((ord(char) - base + desplazamiento) % 26 + base)#almacenamos el caracter cifrado en la variable resultado
 
-        elif char.isdigit():  # números
-            base = ord('0')
+        elif char.isdigit():  # unicamente números
+            base = ord('0')#
             resultado += chr((ord(char) - base + desplazamiento) % 10 + base)
 
-        else:  # espacios, símbolos, etc.
+        else:  # espacios, símbolos, etc
             resultado += char
 
     return resultado
